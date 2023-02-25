@@ -164,7 +164,7 @@ export const AwsProvider = ({ children }) => {
         getUser(data);
       }
       if (event === 'autoSignIn') {
-        const author = newAuthor({
+        const author = await newAuthor({
           user: data.username,
           followers: 0,
           author_sale: null,

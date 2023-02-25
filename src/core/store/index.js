@@ -34,19 +34,19 @@ export async function UpdateAuthor(id, bids) {
     return false;
   }
 }
-export function newAvatar(avatar) {
+export async function newAvatar(avatar) {
   return avatar ? new AVATAR(avatar) : null;
 }
-export function newArtists(artists) {
+export async function newArtists(artists) {
   return artists ? new ARTISTS(artists) : null;
 }
-export function newOwner(owner) {
+export async function newOwner(owner) {
   return owner ? new OWNER(owner) : null;
 }
-export function newEventInfo(EventInfo) {
+export async function newEventInfo(EventInfo) {
   return EventInfo ? new EVENTINFO(EventInfo) : null;
 }
-export function newAuthor(author) {
+export async function newAuthor(author) {
   return author ? new AUTHOR(author) : null;
 }
 export async function newNFTS(nfts) {

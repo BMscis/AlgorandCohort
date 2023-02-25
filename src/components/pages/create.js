@@ -231,7 +231,8 @@ class Createpage extends Component {
     });
     try {
       nft = await this.createNFT();
-      cr = await DataStore.save(newNFTS(nft));
+      const nNFT = await newNFTS(nft);
+      cr = await DataStore.save(nNFT);
     } catch (error) {
       console.log('ERROR: ', error);
     }

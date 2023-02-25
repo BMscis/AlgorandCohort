@@ -170,7 +170,7 @@ export const AwsProvider = ({ children }) => {
           author_sale: null,
           about: null,
           banner: null,
-          photo: newAvatar({
+          photo: await newAvatar({
             name: data.attributes.picture,
             alternativeText: data.attributes.picture,
             width: 200,

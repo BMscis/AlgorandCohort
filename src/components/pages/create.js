@@ -103,9 +103,9 @@ class Createpage extends Component {
   async createNFT() {
     const artists = [];
     this.state.event.artists.forEach(async (e) => {
-      const art = newArtists({
+      const art = await newArtists({
         name: e.name,
-        image: newAvatar({
+        image: await newAvatar({
           name: e.image.name,
           alternativeText: e.name,
           width: e.image.size,
@@ -131,7 +131,7 @@ class Createpage extends Component {
       views: 1020,
       priceover: null,
       showcase: true,
-      preview_image: newAvatar({
+      preview_image: await newAvatar({
         name: imageName,
         alternativeText: '',
         width: 720,
@@ -139,15 +139,15 @@ class Createpage extends Component {
         url: `https://smartseat-storage-43b115d3225556-dev.s3.amazonaws.com/public/preview_image/${this.state.saveImage.name}`
       }),
       chain: 'ALGO',
-      owner: newOwner({
+      owner: await newOwner({
         author: this.context.user.user,
-        banner: this.context.user.banner ? newAvatar(this.context.user.banner) : null,
-        avatar: this.context.user.photo ? newAvatar(this.context.user.photo) : null,
+        banner: this.context.user.banner ? await newAvatar(this.context.user.banner) : null,
+        avatar: this.context.user.photo ? await newAvatar(this.context.user.photo) : null,
         username: this.context.user.social
       }),
       bids: [],
       history: [],
-      event: newEventInfo({
+      event: await newEventInfo({
         contractAddress: this.state.CONTRACTADDRESS,
         tokenID: this.state.TOKENID,
         walletAddress: this.context.wallet.Account,

@@ -59,13 +59,13 @@ class Colection extends Component {
         const nftBids = this.state.nft.bids;
         const authorBids = this.context.user.bidHistory;
         const ticketSold = stdlib.bigNumberToNumber(tokenSold);
-        const bid = newBids({
+        const bid = await newBids({
           value: pay,
           nftId: this.state.nft.id,
-          buyer: newOwner({
+          buyer: await newOwner({
             author: this.context.user.user,
-            banner: newAvatar(this.context.user.banner),
-            avatar: newAvatar(this.context.user.photo),
+            banner: await newAvatar(this.context.user.banner),
+            avatar: await newAvatar(this.context.user.photo),
             username: this.context.user.social
           }),
           createdAt: JSON.stringify(Date.now())
